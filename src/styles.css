@@ -1,0 +1,73 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.movie-slider {
+  display: flex;
+  overflow-x: auto;
+  padding: 24px;
+  background-color: #0f0f0f;
+  min-height: 100vh;
+  scroll-snap-type: x mandatory;
+}
+
+.movie-card {
+  position: relative;
+  min-width: 280px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: start;
+  margin-right: 16px;
+}
+.movie-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.movie-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.3) 70%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+.prime-logo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: transparent;
+  width: 50px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #232f3e;
+}
+@media (max-width: 768px) {
+  .movie-slider {
+    padding: 16px;
+  }
+
+  .movie-card {
+    height: 180px;
+  }
+
+  .prime-logo {
+    width: 50px;
+    height: 50px;
+    font-size: 10px;
+  }
+}
